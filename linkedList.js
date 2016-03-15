@@ -51,7 +51,9 @@ function linkedListGenerator(){
 
     if(currentNode === false) {
       return false;
-    } else if(prevNode === false) {
+    }
+
+    if(prevNode === false) {
       if(currentNode.next === null) {
         _head = null;
         _tail = null;
@@ -72,11 +74,12 @@ function linkedListGenerator(){
 
     if(currentNode === false) {
       return false;
-    } else if(prevNode === false) {
-      var newNode = node(value, currentNode);
+    }
+
+    var newNode = node(value, currentNode);
+    if(prevNode === false) {
       _head = newNode;
     } else {
-      var newNode = node(value, currentNode);
       prevNode.next = newNode;
     }
 
